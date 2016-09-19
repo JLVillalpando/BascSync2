@@ -1,0 +1,7 @@
+<IDOC>
+<RC Archivo="CD01000000000017_MG_07092016_142151" Canal="MG" Centro="CD01" Destinatario="SAPP00" Fecha="07092016" Hora="142151" Mandante="180" Release="701" Remitente="IDOCS" TBase="WVINVE03" TMensaje="WVINVE03" /><RD>
+<Transaccion TOrganizacion="GV01" TCentro="CD01" TAlmacen="A001" TReferencia="010006" TFecha="07092016" THora="142151">
+<Detalle C01="2" C02="0.125" C03="KG" C04="13.75" />
+</Transaccion>
+</RD>
+</IDOC>
