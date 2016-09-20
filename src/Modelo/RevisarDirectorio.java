@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import javax.swing.JOptionPane;
 
 public class RevisarDirectorio {
 
@@ -15,7 +14,7 @@ public class RevisarDirectorio {
         lista = directorio.list();
         if (directorio.exists()) {
             if (lista.length >= 1) {
-                return revisando(lista);
+                return revisando(lista,ruta);
             } else {
                 return null;
             }
@@ -26,7 +25,7 @@ public class RevisarDirectorio {
 
     }
 
-    private String revisando(String[] arch) throws IOException {
+    private String revisando(String[] arch, String directorio) throws IOException {
         String linea = null;
         File archivo = null;
         FileReader fr = null;
@@ -35,20 +34,23 @@ public class RevisarDirectorio {
         try {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            archivo = new File("./Archivos/" + arch[0]);
-
+            archivo = new File(directorio+"/"+ arch[0]);
+            //Hacemos el respaldo del archivo
+            Backup b=new Backup();
+            b.CrearBakcup(archivo,arch[0]);
+            //
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
-
             // Lectura del fichero
             linea = br.readLine();
             fr.close();
             archivo.delete();
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             fr.close();
-
+            
         }
         return linea;
     }
