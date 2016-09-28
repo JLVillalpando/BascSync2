@@ -10,15 +10,15 @@ import java.io.OutputStream;
 
 public class Backup 
 {
-    public void CrearBakcup(File origen,String nombre) throws FileNotFoundException, IOException
+    public void CrearBakcup(File origen,String nombre,String directorioBKP) throws FileNotFoundException, IOException
     {
-        Backup(origen,nombre);
+        Backup(origen,nombre,directorioBKP );
     }
-    private void Backup(File Origen, String nombre) throws FileNotFoundException, IOException
+    private void Backup(File Origen, String nombre,String directorioBKP) throws FileNotFoundException, IOException
     {
         try
         {
-            File destino = new File("./bkp/"+nombre);
+            File destino = new File(directorioBKP+"/"+nombre);
             InputStream in = new FileInputStream(Origen);
             OutputStream out = new FileOutputStream(destino);
             byte[] buf = new byte[1024];

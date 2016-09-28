@@ -7,14 +7,14 @@ import java.io.IOException;
 
 public class RevisarDirectorio {
 
-    public String revisar(String ruta) throws IOException {
+    public String revisar(String ruta, String directorioBKP) throws IOException {
 
         File directorio = new File(ruta);
         String[] lista = null;
         lista = directorio.list();
         if (directorio.exists()) {
             if (lista.length >= 1) {
-                return revisando(lista,ruta);
+                return revisando(lista,ruta,directorioBKP);
             } else {
                 return null;
             }
@@ -25,7 +25,7 @@ public class RevisarDirectorio {
 
     }
 
-    private String revisando(String[] arch, String directorio) throws IOException {
+    private String revisando(String[] arch, String directorio, String directorioBKP) throws IOException {
         String linea = null;
         File archivo = null;
         FileReader fr = null;
@@ -37,7 +37,7 @@ public class RevisarDirectorio {
             archivo = new File(directorio+"/"+ arch[0]);
             //Hacemos el respaldo del archivo
             Backup b=new Backup();
-            b.CrearBakcup(archivo,arch[0]);
+            b.CrearBakcup(archivo,arch[0],directorioBKP);
             //
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);

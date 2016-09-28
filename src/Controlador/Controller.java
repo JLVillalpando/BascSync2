@@ -9,12 +9,14 @@ import javax.swing.JOptionPane;
 
 public class Controller extends Thread {
 
-    private String directorio;
-    private int tiempo;
+    private final String directorio;
+    private final String directorioBKP;
+    private final int tiempo;
 
-    public Controller(String dir, int tie) {
+    public Controller(String dir, int tie, String dirBKP) {
         directorio = dir;
         tiempo = tie;
+        directorioBKP= dirBKP;
 
     }
 
@@ -32,9 +34,9 @@ public class Controller extends Thread {
 
             while (!Thread.currentThread().isInterrupted()) {
                 RevisarDirectorio RD = new RevisarDirectorio();
-                String info = RD.revisar(directorio);
+                String info = RD.revisar(directorio,directorioBKP);
                 if (info != null) {
-                    if(info == "dir"){
+                    if(info.equals("dir")){
                         JOptionPane.showInternalInputDialog(null, "irrr");
                     }else{
                         ObtenerDatos(info);
