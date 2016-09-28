@@ -11,7 +11,7 @@ public class Func2 {
             String name = settings.get("Centro") + Utils.padL(String.valueOf(contador), 12, '0') + "_" + settings.get("Canal") + "_" + TFecha + "_" + THora;
             
             String stringXML = "<IDOC>\n"
-                    + "<RC Archivo=\"" + name  + "\" Canal=\"" + settings.get("Canal") + "\" Centro=\"" + settings.get("Centro") + "\" Destinatario=\"" + settings.get("Destinatario") + "\" Fecha=\"" + TFecha + "\" Hora=\"" + THora + "\" Mandante=\"" + settings.get("Mandante") + "\" Release=\"" + settings.get("Release") + "\" Remitente=\"" + settings.get("Remitente") + "\" TBase=\"" + settings.get("TBase") + "\" TMensaje=\"" + settings.get("TMensaje") + "\" />"
+                    + "<RC Archivo=\"" + name  + "\" Canal=\"" + settings.get("Canal") + "\" Centro=\"" + settings.get("Centro") + "\" Destinatario=\"" + settings.get("Destinatario") + "\" Fecha=\"" + TFecha + "\" Hora=\"" + THora + "\" Mandante=\"" + settings.get("Mandante") + "\" Release=\"" + settings.get("Release") + "\" Remitente=\"" + settings.get("Remitente") + "\" TBase=\"" + settings.get("TBase") + "\" TMensaje=\"" + settings.get("TMensaje") + "\" />\n"
                     + "<RD>\n"
                     + "<Transaccion TOrganizacion=\"" + settings.get("TOrganizacion") + "\" TCentro=\"" + settings.get("Centro") + "\" TAlmacen=\"" + settings.get("TAlmacen") + "\" TReferencia=\"" + TReferencia + "\" TFecha=\"" + TFecha + "\" THora=\"" + THora + "\">\n"
                     + "<Detalle C01=\"" + C01 + "\" C02=\"" + C02 + "\" C03=\"" + settings.get("C03") + "\" C04=\"" + C04 + "\" />\n"
